@@ -12,14 +12,21 @@ import EditorialBlock from '../components/EditorialBlock';
 import HeroBannerBlock from '../components/HeroBannerBlock';
 import GalleryBlock from '../components/GalleryBlock';
 import Sidebar from '../components/Sidebar';
-
 import { fetchContent } from '../utils/fetchContent';
 
 interface Props {
+    navigation: {
+        links: {title: string, href: string}[]
+    },
+    slot: {
+        components: any[]
+    }
 }
 
 const Index: NextPage<Props> = (props: Props) => {
   let {
+      navigation,
+      slot
   } = props;
 
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -28,28 +35,7 @@ const Index: NextPage<Props> = (props: Props) => {
     setSidebarOpen(!sidebarOpen);
   }
 
-  const navigationLinks = [
-    {
-      title: 'Home',
-      href: '/'
-    },
-    {
-      title: 'Men',
-      href: '/men'
-    },
-    {
-      title: 'Women',
-      href: '/women'
-    },
-    {
-      title: 'Lookbook',
-      href: '/lookbook'
-    },
-    {
-      title: 'Blog',
-      href: '/blog'
-    }
-  ];
+  const navigationLinks = navigation.links;
 
   return (
     <>
@@ -69,40 +55,25 @@ const Index: NextPage<Props> = (props: Props) => {
           onToggleSidebar={handleToggleSidebar}>
         </Header>
 
-        <HeroBannerBlock 
-          image="https://i1.adis.ws/i/ampliencelabs/greg-rivers-YeP1MUZDSsE-unsplash"
-          title="Home Comforts"
-          description="Spruce up your space with our wide selection of home furnishings offering next day delivery."
-          callToAction="Shop All"
-          callToActionHref="/category/beauty" />
+        {
+            slot.components.map(component => {
+                let ComponentType = null;
 
-        <EditorialBlock
-          title="Personal Shopping"
-          description="For informed advice and inspiration, book an appointment with one of our Personal Shopping Advisors." />
-
-        <GalleryBlock
-          title="Highlights"
-          items={[
-            
-            {
-              title: "Shoes Edit",
-              image: "https://i1.adis.ws/i/ampliencelabs/mohammad-metri-E-0ON3VGrBc-unsplash",
-              callToAction: "SHOP NOW",
-              callToActionHref: "/"
-            },
-            {
-              title: "Wellness Shop",
-              image: "https://i1.adis.ws/i/ampliencelabs/deanna-alys-6LBBOwkPzyQ-unsplash",
-              callToAction: "SHOP NOW",
-              callToActionHref: "/"
-            },
-            {
-              title: "Summer Styles",
-              image: "https://i1.adis.ws/i/ampliencelabs/aziz-acharki-ufkBk8aNsjg-unsplash",
-              callToAction: "SHOP NOW",
-              callToActionHref: "/"
-            }
-          ]} />
+                switch (component.component) {
+                    case 'HeroBannerBlock':
+                        ComponentType = HeroBannerBlock;
+                        break;
+                    case 'EditorialBlock':
+                        ComponentType = EditorialBlock;
+                        break;
+                    case 'GalleryBlock':
+                        ComponentType = GalleryBlock;
+                        break;
+                }
+                
+                return <ComponentType {...component} />;
+            })
+        }
 
         <Footer />
       </div>
@@ -113,7 +84,13 @@ const Index: NextPage<Props> = (props: Props) => {
 }
 
 Index.getInitialProps = async (context) => {
-  return {};
+  const navigation = fetchContent('global/navigation');
+  const slot = fetchContent('slots/homepage-hero');
+
+  return {
+    navigation: await navigation,
+    slot: await slot
+  };
 };
 
 export default Index;
