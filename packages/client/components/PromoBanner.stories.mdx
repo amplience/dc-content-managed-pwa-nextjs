@@ -1,0 +1,43 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import PromoBanner from './PromoBanner';
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+
+<Meta title="PromoBanner" />
+
+# PromoBanner
+
+PromoBanner is a thin, full width banner that can contain text, links and icons.
+
+## Preview
+
+<Preview>
+  <Story name="Preview">
+    <PromoBanner>
+        ORDER BEFORE 1PM FOR NEXT DAY DELIVERY
+    </PromoBanner>
+  </Story>
+</Preview>
+
+## Link
+
+<Preview>
+  <Story name="With Link">
+    <PromoBanner>
+        <a href="/">
+            ORDER BEFORE 1PM FOR NEXT DAY DELIVERY
+        </a>
+    </PromoBanner>
+  </Story>
+</Preview>
+
+
+## Icon
+
+<Preview>
+  <Story name="With Icon">
+    <PromoBanner>
+        <AccessAlarmIcon /> ORDER BEFORE 1PM FOR NEXT DAY DELIVERY
+    </PromoBanner>
+  </Story>
+</Preview>
+

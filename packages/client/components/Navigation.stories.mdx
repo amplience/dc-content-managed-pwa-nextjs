@@ -1,0 +1,37 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Navigation from './Navigation';
+
+<Meta title="Navigation" />
+
+# Navigation
+
+Navigation is a component that renders a primary navigation menu at the top of the site. It contains a list of menu items each with a label and hyperlink.
+
+## Preview
+
+<Preview>
+  <Story name="Navigation">
+      <Navigation links={[
+          {
+              label: 'Home',
+              href: '/'
+          },
+          {
+              label: 'Men',
+              href: '/men'
+          },
+          {
+              label: 'Women',
+              href: '/women'
+          },
+          {
+              label: 'Lookbook',
+              href: '/lookbook'
+          },
+          {
+              label: 'Blog',
+              href: '/blog'
+          }
+      ]} />
+  </Story>
+</Preview>

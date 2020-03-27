@@ -1,0 +1,38 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://anyafinn.dev/global-navigation.json",
+
+	"title": "Navigation",
+	"description": "",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+        "links": {
+			"type": "array",
+			"title": "Navigation Links",
+			"items": {
+				"type": "object",
+				"properties": {
+					"label": {
+						"type": "string",
+						"title": "Label"
+					},
+					"href": {
+						"type": "string",
+						"title": "Hyperlink"
+					}
+				},
+				"propertyOrder": ["label", "href"]
+			}
+		}
+    },
+    
+    "definitions": {
+    }
+}

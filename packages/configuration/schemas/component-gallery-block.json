@@ -1,0 +1,57 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://anyafinn.dev/component-gallery-block.json",
+
+	"title": "Gallery Block",
+	"description": "",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"component": {
+			"type": "string",
+			"const": "GalleryBlock"
+		},
+		"title": {
+			"type": "string",
+			"title": "Title"
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"image": {
+						"title": "Image",
+						"allOf": [
+							{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link" }
+						]
+					},
+					"title": {
+						"type": "string",
+						"title": "Title"
+					},
+					"callToAction": {
+						"type": "string",
+						"title": "Call to action"
+					},
+					"callToActionHref": {
+						"type": "string",
+						"title": "Call to action hyperlink"
+					}
+				},
+				"propertyOrder": ["title", "description", "callToAction", "callToActionHref"]
+			}
+		}
+	},
+	
+	"propertyOrder": ["title", "items"],
+    
+    "definitions": {
+    }
+}

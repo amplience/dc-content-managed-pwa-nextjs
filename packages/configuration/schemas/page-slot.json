@@ -1,0 +1,40 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://anyafinn.dev/page-slot.json",
+
+	"title": "Page Slot",
+	"description": "",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+        "components": {
+			"title": "Components",
+			"type": "array",
+			"items": {
+				"allOf": [
+					{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+					{
+						"properties": {
+							"contentType": {
+								"enum": [
+									"https://anyafinn.dev/component-hero-banner-block.json",
+									"https://anyafinn.dev/component-editorial-block.json",
+									"https://anyafinn.dev/component-gallery-block.json"
+								]
+							}
+						}
+					}
+				]
+			}
+		}
+    },
+    
+    "definitions": {
+    }
+}

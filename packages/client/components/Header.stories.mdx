@@ -1,0 +1,30 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Header from './Header';
+import UserActions from './UserActions';
+import SearchBox from './SearchBox';
+
+<Meta title="Header" />
+
+# Header
+
+Header is a component that renders navigation and search inputs for users to interact with. The header is split into three sections, search, actions and navigation.
+You can populate these areas with any other suitable react components.
+
+## Preview
+
+<Preview>
+  <Story name="Preview">
+    <Header actions={<UserActions />}
+            search={<SearchBox />} />
+  </Story>
+</Preview>
+
+## Slots
+
+<Preview>
+  <Story name="Slots">
+    <Header search={<div style={{width: '100%', height: '100%', background: 'red', textAlign: 'center', color: 'white'}}>Search</div>}
+        actions={<div style={{width: '100%', height: '100%', background: 'blue', textAlign: 'center', color: 'white'}}>Actions</div>}
+        navigation={<div style={{width: '100%', height: '100%', background: 'green', textAlign: 'center', color: 'white'}}>Navigation</div>} />
+  </Story>
+</Preview>

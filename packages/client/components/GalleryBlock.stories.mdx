@@ -1,0 +1,38 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import GalleryBlock from './GalleryBlock';
+
+<Meta title="GalleryBlock" />
+
+# GalleryBlock
+
+GalleryBlock is a component that renders a grid of cards with a title and call to action link.
+
+## Preview
+
+<Preview>
+  <Story name="Preview">
+    <GalleryBlock
+          title="title"
+          items={[
+            {
+              title: "Lorem ipsum",
+              image: "https://i1.adis.ws/i/ampliencelabs/mohammad-metri-E-0ON3VGrBc-unsplash",
+              callToAction: "Call to action",
+              callToActionHref: "/"
+            },
+            {
+              title: "Lorem ipsum",
+              image: "https://i1.adis.ws/i/ampliencelabs/deanna-alys-6LBBOwkPzyQ-unsplash",
+              callToAction: "Call to action",
+              callToActionHref: "/"
+            },
+            {
+              title: "Lorem ipsum",
+              image: "https://i1.adis.ws/i/ampliencelabs/aziz-acharki-ufkBk8aNsjg-unsplash",
+              callToAction: "Call to action",
+              callToActionHref: "/"
+            }
+          ]}/>
+  </Story>
+</Preview>
+

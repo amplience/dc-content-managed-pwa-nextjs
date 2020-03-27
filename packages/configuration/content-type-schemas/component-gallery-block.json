@@ -1,0 +1,5 @@
+{
+    "body": "../schemas/component-gallery-block.json",
+    "schemaId": "https://anyafinn.dev/component-gallery-block.json",
+    "validationLevel": "CONTENT_TYPE"
+}

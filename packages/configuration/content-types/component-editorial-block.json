@@ -1,0 +1,11 @@
+{
+    "contentTypeUri": "https://anyafinn.dev/component-editorial-block.json",
+    "settings": {
+        "label": "Editorial Block",
+        "visualizations": [],
+        "icons": [{
+            "size": 256,
+            "url": "https://bigcontent.io/cms/icons/bond/bond-textblock.png"
+        }]
+    }
+}

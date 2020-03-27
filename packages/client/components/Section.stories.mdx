@@ -1,0 +1,31 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Section, { SectionVariant } from './Section';
+
+<Meta title="Section" />
+
+# Section
+
+Sections can be used to break up a page and group other components together with a title.
+
+## Preview
+
+<Preview>
+  <Story name="Preview">
+    <Section title="HIGHLIGHTS">
+      Content can be added inside a section
+    </Section>
+  </Story>
+</Preview>
+
+## Contained
+
+Contained sections have a background color to create contrast between sections.
+
+<Preview>
+  <Story name="Contained">
+    <Section title="HIGHLIGHTS" variant={SectionVariant.CONTAINED}>
+      Content can be added inside a section
+    </Section>
+  </Story>
+</Preview>
+

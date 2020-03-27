@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://anyafinn.dev/component-hero-banner-block.json",
+
+	"title": "Hero Banner Block",
+	"description": "",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"component": {
+			"type": "string",
+			"const": "HeroBannerBlock"
+		},
+		"image": {
+			"title": "Image",
+			"allOf": [
+				{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link" }
+			]
+		},
+		"title": {
+			"type": "string",
+			"title": "Title"
+		},
+		"description": {
+			"type": "string",
+			"format": "markdown",
+			"title": "Description"
+		},
+		"callToAction": {
+			"type": "string",
+			"title": "Call to action"
+		},
+		"callToActionHref": {
+			"type": "string",
+			"title": "Call to action hyperlink"
+		}
+	},
+	
+	"propertyOrder": ["image", "title", "description", "callToAction", "callToActionHref"],
+    
+    "definitions": {
+    }
+}

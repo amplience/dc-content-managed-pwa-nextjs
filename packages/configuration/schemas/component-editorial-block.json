@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://anyafinn.dev/component-editorial-block.json",
+
+	"title": "Editorial Block",
+	"description": "",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"component": {
+			"type": "string",
+			"const": "EditorialBlock"
+		},
+		"title": {
+			"type": "string",
+			"title": "Title"
+		},
+		"description": {
+			"type": "string",
+			"format": "markdown",
+			"title": "Description"
+		}
+	},
+	
+	"propertyOrder": ["title", "description", "callToAction", "callToActionHref"],
+    
+    "definitions": {
+    }
+}
