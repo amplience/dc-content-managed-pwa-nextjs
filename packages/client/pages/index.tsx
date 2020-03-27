@@ -30,23 +30,23 @@ const Index: NextPage<Props> = (props: Props) => {
 
   const navigationLinks = [
     {
-      label: 'Home',
+      title: 'Home',
       href: '/'
     },
     {
-      label: 'Men',
+      title: 'Men',
       href: '/men'
     },
     {
-      label: 'Women',
+      title: 'Women',
       href: '/women'
     },
     {
-      label: 'Lookbook',
+      title: 'Lookbook',
       href: '/lookbook'
     },
     {
-      label: 'Blog',
+      title: 'Blog',
       href: '/blog'
     }
   ];

@@ -126,7 +126,7 @@ const Sidebar: React.SFC<Props> = (props) => {
                                 links.map(link => {
                                     return <Link href={link.href}>
                                         <ListItem button>
-                                            <ListItemText primary={link.label} />
+                                            <ListItemText primary={link.title} />
                                         </ListItem>
                                     </Link>;
                                 })

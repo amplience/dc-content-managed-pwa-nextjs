@@ -32,7 +32,7 @@ const styles = (theme: Theme) => ({
 });
 
 export type NavigationLink = {
-    label: string;
+    title: string;
     href: string;
 };
 
@@ -63,7 +63,7 @@ const Navigation: React.SFC<Props> = (props) => {
                         })}>
                             <Link href="/">
                                 <a>
-                                    {link.label}
+                                    {link.title}
                                 </a>
                             </Link>
                         </li>;
