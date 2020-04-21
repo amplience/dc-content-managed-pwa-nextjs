@@ -4,6 +4,7 @@ import { NextPage } from 'next';
 import EditorialBlock from '../components/EditorialBlock';
 import HeroBannerBlock from '../components/HeroBannerBlock';
 import GalleryBlock from '../components/GalleryBlock';
+import Navigation from '../components/Navigation';
 import { fetchContentById } from '../utils/fetchContent';
 
 interface Props {
@@ -26,6 +27,9 @@ const Visualization: NextPage<Props> = (props: Props) => {
             break;
         case 'GalleryBlock':
             ComponentType = GalleryBlock;
+            break;
+        case 'Navigation':
+            ComponentType = Navigation;
             break;
     }
 

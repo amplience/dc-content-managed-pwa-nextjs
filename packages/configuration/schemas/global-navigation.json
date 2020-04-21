@@ -13,22 +13,26 @@
 	
 	"type": "object",
 	"properties": {
+		"component": {
+			"type": "string",
+			"const": "Navigation"
+		},
         "links": {
 			"type": "array",
 			"title": "Navigation Links",
 			"items": {
 				"type": "object",
 				"properties": {
-					"label": {
+					"title": {
 						"type": "string",
-						"title": "Label"
+						"title": "Title"
 					},
 					"href": {
 						"type": "string",
 						"title": "Hyperlink"
 					}
 				},
-				"propertyOrder": ["label", "href"]
+				"propertyOrder": ["title", "href"]
 			}
 		}
     },
