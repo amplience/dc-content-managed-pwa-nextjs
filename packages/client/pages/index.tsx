@@ -71,9 +71,6 @@ const Index: NextPage<Props> = (props: Props) => {
                     case 'GalleryBlock':
                         ComponentType = GalleryBlock;
                         break;
-                    case 'Navigation':
-                        ComponentType = Navigation;
-                        break;
                 }
                 
                 return <ComponentType {...component} />;
