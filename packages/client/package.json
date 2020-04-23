@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "export": "yarn run build && next export"
   },
   "keywords": [],
   "author": "",
