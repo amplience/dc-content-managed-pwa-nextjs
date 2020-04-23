@@ -6,7 +6,7 @@
         "visualizations": [
         {
             "label": "PWA (Localhost)",
-            "templatedUri":"https://localhost:443/visualization?id={{content.sys.id}}&contentApi={{vse.domain}}",
+            "templatedUri":"http://localhost:3000/visualization?id={{content.sys.id}}&contentApi={{vse.domain}}",
             "default": true
         },
         {
@@ -21,7 +21,7 @@
         }],
         "cards": [
         {
-            "templatedUri":"https://localhost:443/visualization?id={{content.sys.id}}&contentApi={{vse.domain}}"
+            "templatedUri":"http://localhost:3000/visualization?id={{content.sys.id}}&contentApi={{vse.domain}}"
         }]
     },
     "repositories": ["content"]
