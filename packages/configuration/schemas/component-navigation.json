@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://anyafinn.dev/global-navigation.json",
+	"$id": "https://anyafinn.dev/component-navigation.json",
 
 	"title": "Navigation",
 	"description": "",

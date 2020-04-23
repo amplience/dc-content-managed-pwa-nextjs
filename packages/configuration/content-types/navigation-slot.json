@@ -1,8 +1,8 @@
 {
-    "contentTypeUri": "https://anyafinn.dev/component-hero-banner-block.json",
+    "contentTypeUri": "https://anyafinn.dev/navigation-slot.json",
     "settings":
     {
-        "label": "Hero Banner Block",
+        "label": "Navigation Slot",
         "visualizations": [
         {
             "label": "PWA (Localhost)",
@@ -17,12 +17,12 @@
         "icons": [
         {
             "size": 256,
-            "url": "https://bigcontent.io/cms/icons/bond/bond-herobanner.png"
+            "url": "https://bigcontent.io/cms/icons/bond/bond-extblock.png"
         }],
         "cards": [
         {
             "templatedUri":"https://localhost:443/visualization?id={{content.sys.id}}&contentApi={{vse.domain}}"
         }]
     },
-    "repositories": ["content"]
+    "repositories": ["slots"]
 }

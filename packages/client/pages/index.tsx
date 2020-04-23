@@ -16,7 +16,9 @@ import { fetchContent } from '../utils/fetchContent';
 
 interface Props {
     navigation: {
+      navigation:{
         links: {title: string, href: string}[]
+      }
     },
     slot: {
         components: any[]
@@ -35,7 +37,7 @@ const Index: NextPage<Props> = (props: Props) => {
     setSidebarOpen(!sidebarOpen);
   }
 
-  const navigationLinks = navigation.links;
+  const navigationLinks = navigation.navigation.links;
 
   return (
     <>
@@ -69,6 +71,9 @@ const Index: NextPage<Props> = (props: Props) => {
                     case 'GalleryBlock':
                         ComponentType = GalleryBlock;
                         break;
+                    case 'Navigation':
+                        ComponentType = Navigation;
+                        break;
                 }
                 
                 return <ComponentType {...component} />;
@@ -84,8 +89,8 @@ const Index: NextPage<Props> = (props: Props) => {
 }
 
 Index.getInitialProps = async (context) => {
-  const navigation = fetchContent('global/navigation');
-  const slot = fetchContent('slots/homepage-hero');
+  const navigation = fetchContent('global/navigation', context.query.contentApi as string);
+  const slot = fetchContent('slots/homepage-hero', context.query.contentApi as string);
 
   return {
     navigation: await navigation,

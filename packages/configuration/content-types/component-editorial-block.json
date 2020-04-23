@@ -1,11 +1,28 @@
 {
     "contentTypeUri": "https://anyafinn.dev/component-editorial-block.json",
-    "settings": {
+    "settings":
+    {
         "label": "Editorial Block",
-        "visualizations": [],
-        "icons": [{
+        "visualizations": [
+        {
+            "label": "PWA (Localhost)",
+            "templatedUri":"https://localhost:443/visualization?id={{content.sys.id}}&contentApi={{vse.domain}}",
+            "default": true
+        },
+        {
+            "label": "JSON",
+            "templatedUri":"https://{{vse.domain}}/content/id/{{content.sys.id}}?depth=all&format=inlined",
+            "default": false
+        }],
+        "icons": [
+        {
             "size": 256,
             "url": "https://bigcontent.io/cms/icons/bond/bond-textblock.png"
+        }],
+        "cards": [
+        {
+            "templatedUri":"https://localhost:443/visualization?id={{content.sys.id}}&contentApi={{vse.domain}}"
         }]
-    }
+    },
+    "repositories": ["content"]
 }
