@@ -31,13 +31,36 @@ const Index: NextPage<Props> = (props: Props) => {
       slot
   } = props;
 
+
+
+
+
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
 
   const handleToggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   }
+  
+  /** Data fixes if not loaded **/
+  var defaultNavContent = [ { title: 'Error: No Navigation Slot with content for delivery key "global/navigation"', href: '/' }]
+  if(navigation && navigation.navigation && navigation.navigation.links ){
+    defaultNavContent = navigation.navigation.links;
+  }
+  const navigationLinks = defaultNavContent;
 
-  const navigationLinks = navigation.navigation.links;
+  var defaultSlotContent = {
+    components: [
+      {
+          description: 'No Page Slot with content for delivery key "slots/homepage-hero"',
+          component: 'EditorialBlock',
+          title: 'Error loading content'
+      }]
+    }
+    if(slot && slot.components){
+      defaultSlotContent = slot;
+    }
+    const slotContent = defaultSlotContent;
+
 
   return (
     <>
@@ -58,7 +81,7 @@ const Index: NextPage<Props> = (props: Props) => {
         </Header>
 
         {
-            slot.components.map(component => {
+            slotContent.components.map(component => {
                 let ComponentType = null;
 
                 switch (component.component) {
