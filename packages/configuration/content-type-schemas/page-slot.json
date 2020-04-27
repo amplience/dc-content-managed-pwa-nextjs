@@ -1,5 +1,5 @@
 {
-    "body": "../schemas/page-slot.json",
+    "body": "../content-schemas/page-slot.json",
     "schemaId": "https://anyafinn.dev/page-slot.json",
-    "validationLevel": "CONTENT_TYPE"
+    "validationLevel": "SLOT"
 }

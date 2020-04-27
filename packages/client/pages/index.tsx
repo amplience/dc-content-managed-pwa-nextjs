@@ -16,7 +16,9 @@ import { fetchContent } from '../utils/fetchContent';
 
 interface Props {
     navigation: {
+      navigation:{
         links: {title: string, href: string}[]
+      }
     },
     slot: {
         components: any[]
@@ -29,13 +31,33 @@ const Index: NextPage<Props> = (props: Props) => {
       slot
   } = props;
 
+
+
+
+
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
 
   const handleToggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   }
+  
+  /** Data fixes if not loaded **/
+  let defaultNavContent = navigation?.navigation?.links || [ { title: 'Error: No Navigation Slot with content for delivery key "slots/navigation"', href: '/' }]
+  const navigationLinks = defaultNavContent;
 
-  const navigationLinks = navigation.links;
+  let defaultSlotContent = {
+    components: [
+      {
+          description: 'No Page Slot with content for delivery key "slots/homepage-hero"',
+          component: 'EditorialBlock',
+          title: 'Error loading content'
+      }]
+    }
+    if(slot && slot.components){
+      defaultSlotContent = slot;
+    }
+    const slotContent = defaultSlotContent;
+
 
   return (
     <>
@@ -56,7 +78,7 @@ const Index: NextPage<Props> = (props: Props) => {
         </Header>
 
         {
-            slot.components.map(component => {
+            slotContent.components.map(component => {
                 let ComponentType = null;
 
                 switch (component.component) {
@@ -84,8 +106,8 @@ const Index: NextPage<Props> = (props: Props) => {
 }
 
 Index.getInitialProps = async (context) => {
-  const navigation = fetchContent('global/navigation');
-  const slot = fetchContent('slots/homepage-hero');
+  const navigation = fetchContent('slots/navigation', context);
+  const slot = fetchContent('slots/homepage-hero', context);
 
   return {
     navigation: await navigation,

@@ -1,8 +1,8 @@
 {
-    "contentTypeUri": "https://anyafinn.dev/page-slot.json",
+    "contentTypeUri": "https://anyafinn.dev/navigation-slot.json",
     "settings":
     {
-        "label": "Page Slot",
+        "label": "Navigation Slot",
         "visualizations": [
         {
             "label": "JSON",
@@ -12,7 +12,7 @@
         "icons": [
         {
             "size": 256,
-            "url": "https://bigcontent.io/cms/icons/bond/bond-bannercopy.png"
+            "url": "https://bigcontent.io/cms/icons/bond/bond-extblock.png"
         }],
         "cards": []
     },

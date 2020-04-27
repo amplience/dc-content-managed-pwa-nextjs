@@ -1,5 +1,5 @@
 {
-    "body": "../schemas/component-editorial-block.json",
+    "body": "../content-schemas/component-editorial-block.json",
     "schemaId": "https://anyafinn.dev/component-editorial-block.json",
     "validationLevel": "CONTENT_TYPE"
 }

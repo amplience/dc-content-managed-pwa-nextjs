@@ -1,5 +1,5 @@
 {
-    "body": "../schemas/component-hero-banner-block.json",
+    "body": "../content-schemas/component-hero-banner-block.json",
     "schemaId": "https://anyafinn.dev/component-hero-banner-block.json",
     "validationLevel": "CONTENT_TYPE"
 }

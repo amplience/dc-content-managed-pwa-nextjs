@@ -1,8 +1,8 @@
 {
-    "contentTypeUri": "https://anyafinn.dev/component-hero-banner-block.json",
+    "contentTypeUri": "https://anyafinn.dev/component-navigation.json",
     "settings":
     {
-        "label": "Hero Banner Block",
+        "label": "Navigation",
         "visualizations": [
         {
             "label": "PWA (Localhost)",
@@ -17,11 +17,11 @@
         "icons": [
         {
             "size": 256,
-            "url": "https://bigcontent.io/cms/icons/bond/bond-herobanner.png"
+            "url": "https://bigcontent.io/cms/icons/bond/bond-extblock.png"
         }],
         "cards": [
         {
-            "templatedUri":"https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/title&image=/image&imageAlt=/description&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+            "templatedUri":"http://localhost:3000/visualization?id={{content.sys.id}}&contentApi={{vse.domain}}"
         }]
     },
     "repositories": ["content"]
