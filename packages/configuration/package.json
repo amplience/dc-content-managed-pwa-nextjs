@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "sync": "run-s import-content-type-schemas import-content-types",
-    "import-content-type-schemas": "dc-cli content-type-schema import ./imports",
+    "import-content-type-schemas": "dc-cli content-type-schema import ./content-type-schemas",
     "import-content-types": "dc-cli content-type import --sync ./content-types"
   },
   "author": "",

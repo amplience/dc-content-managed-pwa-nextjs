@@ -21,7 +21,7 @@
         }],
         "cards": [
         {
-            "templatedUri":"http://localhost:3000/visualization?id={{content.sys.id}}&contentApi={{vse.domain}}"
+            "templatedUri":"https://bigcontent.io/cms/cards/gallery/index.html?headline=/title&image0=/items/0/image&image1=/items/1/image&image2=/items/2/image&image3=/items/3/image&imageAlt0=/items/0/title&imageAlt1=/items/1/title&imageAlt2=/items/2/title&imageAlt3=/items/3/title&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
         }]
     },
     "repositories": ["content"]

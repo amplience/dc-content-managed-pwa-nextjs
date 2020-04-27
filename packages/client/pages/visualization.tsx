@@ -41,7 +41,7 @@ const Visualization: NextPage<Props> = (props: Props) => {
 Visualization.getInitialProps = async (context) => {
     const content = fetchContentById(
         context.query.id as string, 
-        context.query.contentApi as string
+        context
     );
 
     return {

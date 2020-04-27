@@ -65,7 +65,7 @@ export function getImageURL(image: string | CmsImage, transformations: ImageTran
     } = transformations;
 
     let url = typeof image === 'string' ? image :
-        `https://${image.defaultHost}/i/${encodeURIComponent(image.endpoint)}/${encodeURIComponent(image.name)}`;
+        `//${image.defaultHost}/i/${encodeURIComponent(image.endpoint)}/${encodeURIComponent(image.name)}`;
 
     if (seoFileName) {
         url += `/${encodeURIComponent(seoFileName)}`;

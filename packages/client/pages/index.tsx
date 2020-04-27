@@ -42,13 +42,10 @@ const Index: NextPage<Props> = (props: Props) => {
   }
   
   /** Data fixes if not loaded **/
-  var defaultNavContent = [ { title: 'Error: No Navigation Slot with content for delivery key "global/navigation"', href: '/' }]
-  if(navigation && navigation.navigation && navigation.navigation.links ){
-    defaultNavContent = navigation.navigation.links;
-  }
+  let defaultNavContent = navigation?.navigation?.links || [ { title: 'Error: No Navigation Slot with content for delivery key "slots/navigation"', href: '/' }]
   const navigationLinks = defaultNavContent;
 
-  var defaultSlotContent = {
+  let defaultSlotContent = {
     components: [
       {
           description: 'No Page Slot with content for delivery key "slots/homepage-hero"',
@@ -109,8 +106,8 @@ const Index: NextPage<Props> = (props: Props) => {
 }
 
 Index.getInitialProps = async (context) => {
-  const navigation = fetchContent('global/navigation', context.query.contentApi as string);
-  const slot = fetchContent('slots/homepage-hero', context.query.contentApi as string);
+  const navigation = fetchContent('slots/navigation', context);
+  const slot = fetchContent('slots/homepage-hero', context);
 
   return {
     navigation: await navigation,

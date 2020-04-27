@@ -5,24 +5,16 @@
         "label": "Navigation Slot",
         "visualizations": [
         {
-            "label": "PWA (Localhost)",
-            "templatedUri":"http://localhost:3000/visualization?id={{content.sys.id}}&contentApi={{vse.domain}}",
-            "default": true
-        },
-        {
             "label": "JSON",
             "templatedUri":"https://{{vse.domain}}/content/id/{{content.sys.id}}?depth=all&format=inlined",
-            "default": false
+            "default": true
         }],
         "icons": [
         {
             "size": 256,
             "url": "https://bigcontent.io/cms/icons/bond/bond-extblock.png"
         }],
-        "cards": [
-        {
-            "templatedUri":"http://localhost:3000/visualization?id={{content.sys.id}}&contentApi={{vse.domain}}"
-        }]
+        "cards": []
     },
     "repositories": ["slots"]
 }

@@ -20,7 +20,7 @@ And a few niceties:
 
 ## Dependencies
 
-This project has various dependency packages all listed in the package.json files which include node and yarn. If you do not already have yarn, you can follow the online documentation and installation time of you choice [here](https://classic.yarnpkg.com/en/docs/install/).
+This project has various dependency packages all listed in the package.json files which include node and yarn. If you do not already have yarn, you can follow the online documentation and installation type of your choice [here](https://classic.yarnpkg.com/en/docs/install/).
 
 ## Getting Started
 
@@ -55,27 +55,20 @@ yarn run storybook
 
 This package is a set of configuration files that help automate setting up your Dynamic Content hub.
 
-If you have not already, install and setup the [Dynamic Content CLI](https://github.com/amplience/dc-cli).
-
-Once installed, you can run the following command to create all of the schemas and content types:
-
-```
-yarn run sync
-```
-
 ## Guide to to setting up this application on your own account
 
-By default, the application is loading its content and media from an Amplience demonstration sandbox for your initial tests. If you have your own Amplience account which your would like to use end to end, please follow the steps below.
+By default, the application is loading its content and media from an Amplience demonstration sandbox for your initial tests. If you have your own Amplience account which you would like to use end to end, please follow the steps below.
 
 ### Amplience Account Pre-Requisiites
 
-You will need the following to set up in your own account:
+You will need the following to set up this demo in your own Amplience account:
 
 1. An Amplience account with access to Dynamic Content.
 2. Your Amplience account should have Content Delivery V2 enabled.
 3. Your user account should either be a Developer or an Admin to allow you to create content types.
 4. Management API credendials (ClientID & Secret).
-5. Your Amplience Hub ID which you will use. 
+5. Your Amplience Hub ID which you will be using.
+6. Your Content Delivery V2 publishing endpoint domain.
 
 If you do not have any of these, please contact your Customer Success Manager or Ampliene support directly.
 
@@ -92,7 +85,7 @@ env: {
 When you run your application this will now display dummy content asking you to have content with delivery keys. The application is now pointing to your account.
 
 #### HTTPS visualisation
-Amplience is a secure platform and does not allow embedded apps which are not delivered via SSL. However you can preview by opening your visualisation away from the Amplience app by clicking the open in a new window.
+Amplience is a secure platform and does not allow embedded apps which are not delivered via SSL. However, you can preview by opening your visualisation away from the Amplience appplication by clicking the 'open in a new window' button.
 
 Some options to enable your app SSL:
 1. Deploy and host on an SSL server supporting SSR.
@@ -103,9 +96,9 @@ Some options to enable your app SSL:
 
 As mentioned above, this is a monorepo. Under `packages/configuration` you will find the following sub folders:
 
-1. **schemas:** These are you content models in JSON-Schema format. These content models map to components and also slots.
+1. **content-schemas:** These are your content models in JSON-Schema format. These content models map to components and also slots.
 2. **content-types:** These are your settings for your schemas for use in Amplience. They contain names, icons, visualisations and which repositories they can be used in.
-3. **import:** These tell the Amplience CLI how to provision your content types and schemas.
+3. **content-type-schemas:** These tell the Amplience CLI how to provision your content types and schemas.
 
 #### Import automation
 You can automate the import of schemas and content types directly from your local machine using the Amplience DC CLI.
@@ -130,7 +123,7 @@ dc-cli configure --help
 yarn run sync
 ```
 
-Your account will now be populated with the relavant Schemas and Content Types ready to use.
+Your account will now be populated with the relavant Content Type Schemas and Content Types ready to use.
 
 #### Manual import
 You can also manually create your schemas and content types in the Amplience UI if you do not wish to use the Amplience CLI.
@@ -150,7 +143,7 @@ In your `content` repository, we recommend that you create test content for each
 
 These content types have been enabled with 2 visualisations:
 1. **PWA (Localhost):** This points to your application to visualise the content as your application would render it. 
-2. **JSON:** This gets JSON content which an application would use  directly from the Delivery APIs
+2. **JSON:** This gets JSON content which an application would use directly from the Delivery APIs.
 
 Both have parameterised substitution values for the domain to load content from (Staging content) and the id of the content to load.
 
@@ -166,7 +159,7 @@ In this application there are 2 slot types:
     - Hero Banner Block
 
 In your `slots` repository, create the following:
-1. **Instance of your Navigation Slot:** With your example navigation content. You should also set the delivery key that your application is expecting for the navigtion which is `global/navigation`.
+1. **Instance of your Navigation Slot:** With your example navigation content. You should also set the delivery key that your application is expecting for the navigtion which is `slots/navigation`.
 2. **Instance of your Page Slot:** With one or many of your components. You should also set the delivery key that your application is expecting for the page which is `slots/homepage-hero`.
 
 If you would like to see your application running from here pointing to the content that you have placed into these slots simply publish your 2 slots and go directly to your application at:
@@ -192,7 +185,7 @@ http://localhost:3000?contentApi={{vse.domain}}
 
 Relevant preview documentation can be found [here](https://docs.amplience.net/planning/previewingcontent.html). 
 
-Now you can create your marketing calendar with Campaigns (Events), Time based content drops (Editions) and choose where content is going to go at that time (Slots) with the abiliy to preview you content before it is published and schedule to automatically deploy.
+Now you can create your marketing calendar with Campaigns (Events), Time based content drops (Editions) and choose where content is going to go at that time (Slots) with the abiliy to preview your content before it is published and schedule to automatically deploy.
 
 Typical flow:
 1. Create Event (Campaign)
@@ -205,7 +198,7 @@ Typical flow:
 Guideance for using [Planning](https://docs.amplience.net/planning/readme.html).
 
 ## Deploying your application
-This application takes advantage of Server Side Rendering so your hosting provider would need to take this into consideration and not be a static site hosting. You will also need to host your application on a secure HTTPS domain in order to visualise and preview directly from the Amplience Dynamic Content interface.
+This application uses server side rendering, you should choose a hosting provider that supports SSR and SSL.
 
 Some options but not limited to:
 * [Heroku](https://www.heroku.com/)
