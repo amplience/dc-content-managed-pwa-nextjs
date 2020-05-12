@@ -70,7 +70,7 @@ You will need the following to set up this demo in your own Amplience account:
 5. Your Amplience Hub ID which you will be using.
 6. Your Content Delivery V2 publishing endpoint domain.
 
-If you do not have any of these, please contact your Customer Success Manager or Ampliene support directly.
+If you do not have any of these, please contact your Customer Success Manager or Amplience support directly.
 
 ### Application Configuration
 
@@ -106,7 +106,7 @@ You can automate the import of schemas and content types directly from your loca
 1. In your command line interface change directory to `packages/configuration`.
 2. If not already installed, install the CLI using node package manager:
 ```
-npm install -g @amplience/dc-cli.
+npm install -g @amplience/dc-cli
 ```
 3. Check install
 ```
