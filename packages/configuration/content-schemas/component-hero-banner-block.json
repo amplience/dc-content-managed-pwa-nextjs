@@ -29,7 +29,6 @@
 		},
 		"description": {
 			"type": "string",
-			"format": "markdown",
 			"title": "Description"
 		},
 		"callToAction": {
