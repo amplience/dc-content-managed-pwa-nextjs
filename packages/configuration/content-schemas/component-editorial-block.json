@@ -23,7 +23,8 @@
 		},
 		"description": {
 			"type": "string",
-			"title": "Description"
+			"title": "Description",
+			"format":"markdown"
 		}
 	},
 	
