@@ -21,7 +21,10 @@ const styles = (theme: Theme) => ({
         cursor: 'pointer',
         borderBottom: `3px solid ${theme.palette.background.default}`,
         transition: 'all 0.3s',
-
+        '& a':{
+            textDecoration: 'none',
+            color: theme.palette.text.primary,
+        },
         '&:hover': {
             borderBottom: `3px solid ${theme.palette.primary.light}`,
         }
@@ -61,7 +64,7 @@ const Navigation: React.SFC<Props> = (props) => {
                         return <li className={clsx(classes.listItem, {
                             [classes.activeListItem]: router?.asPath === link.href
                         })}>
-                            <Link href="/">
+                            <Link href='/' as={link.href}>
                                 <a>
                                     {link.title}
                                 </a>
