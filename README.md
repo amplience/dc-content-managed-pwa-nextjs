@@ -200,6 +200,14 @@ Guideance for using [Planning](https://docs.amplience.net/planning/readme.html).
 ## Deploying your application
 This application uses server side rendering, you should choose a hosting provider that supports SSR and SSL.
 
+### Deploy To Netlify
+
+Click on the button below to deploy this repository via Netlify.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/amplience/dc-content-managed-pwa-nextjs)
+
+### Others
+
 Some options but not limited to:
 * [Heroku](https://www.heroku.com/)
 * [AWS Lightsail](https://aws.amazon.com/lightsail/)

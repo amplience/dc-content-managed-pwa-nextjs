@@ -1,0 +1,12 @@
+[build]
+  command   = "cd packages/client && npm run build"
+  functions = "packages/client/out_functions"
+  publish   = "packages/client/out_publish"
+
+[dev]
+  functions = "packages/client/out_functions"
+  publish   = "packages/client/out_publish"
+  # We manually set the framework to static, otherwise Netlify automatically
+  # detects NextJS and redirects do not work.
+  # Read more: https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#project-detection
+  framework = "#static"

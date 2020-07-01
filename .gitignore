@@ -2,3 +2,6 @@ node_modules
 dist
 .next
 packages/client/out/*
+packages/client/out_publish/
+packages/client/out_functions/
+packages/client/404.html
