@@ -35,9 +35,10 @@ This project is a monorepo and contains two sub-projects:
 
 #### packages/client
 
-This package is the application itself, you can run it as you would any NestJS app:
+This package is the application itself, you can run it as you would any NextJS app:
 
 ```
+cd packages/client/
 yarn run dev
 ```
 
@@ -48,6 +49,7 @@ Which will launch the application on [http://localhost:3000](http://localhost:30
 The client package also contains Storybook for simple component UX showcase & editing. The components that make up the client app have been documented using Storybook. You can access this by running:
 
 ```
+cd packages/client/
 yarn run storybook
 ```
 
