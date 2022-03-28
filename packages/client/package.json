@@ -38,7 +38,6 @@
     "@storybook/addon-info": "^5.3.14",
     "@storybook/addon-links": "^5.3.14",
     "@storybook/addons": "^5.3.14",
-    "@storybook/preset-create-react-app": "^2.0.0",
     "@storybook/preset-typescript": "^2.1.0",
     "@storybook/react": "^5.3.14",
     "@types/node": "^13.7.6",
