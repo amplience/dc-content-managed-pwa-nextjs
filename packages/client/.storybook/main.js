@@ -10,12 +10,11 @@ const docGenLoader = {
 };
 
 module.exports = {
-    stories: ['../**/*.stories.(tsx|mdx)'],
+    stories: ['../**/*.stories.@(tsx|mdx)'],
     addons: [
         '@storybook/addon-links/register',
-        "@storybook/preset-create-react-app",
         {
-            name: "@storybook/addon-docs/react/preset",
+            name: "@storybook/addon-docs/preset",
             options: {
                 configureJSX: true
             }
